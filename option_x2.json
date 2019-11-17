@@ -1,0 +1,143 @@
+{
+  "title": "双击 Option",
+  "rules": [
+    {
+      "description": "双击右侧 Option 打开 Chrome",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_option",
+            "modifiers": {
+              "optional": [
+                "any"
+                ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -a 'Google Chrome.app'"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "right_option pressed",
+              "value": 1
+            }
+          ]
+        },
+
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_option",
+            "modifiers": {
+              "optional": [
+                "any"
+                ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "right_option pressed",
+                "value": 1
+              }
+            },
+            {
+              "key_code": "right_option"
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_invoked": [
+              {
+                "set_variable": {
+                  "name": "right_option pressed",
+                  "value": 0
+                }
+              }
+            ],
+            "to_if_canceled": [
+              {
+                "set_variable": {
+                  "name": "right_option pressed",
+                  "value": 0
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "description": "双击左侧 Option 打开 Safari",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "left_option",
+            "modifiers": {
+              "optional": [
+                "any"
+                ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -a 'Safari.app'"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "left_option pressed",
+              "value": 1
+            }
+          ]
+        },
+
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "left_option",
+            "modifiers": {
+              "optional": [
+                "any"
+                ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "left_option pressed",
+                "value": 1
+              }
+            },
+            {
+              "key_code": "left_option"
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_invoked": [
+              {
+                "set_variable": {
+                  "name": "left_option pressed",
+                  "value": 0
+                }
+              }
+            ],
+            "to_if_canceled": [
+              {
+                "set_variable": {
+                  "name": "left_option pressed",
+                  "value": 0
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

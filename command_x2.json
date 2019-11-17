@@ -1,0 +1,74 @@
+{
+  "title": "双击 Command",
+  "rules": [
+    {
+      "description": "双击右侧 Command 打开 iTerm",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_command",
+            "modifiers": {
+              "optional": [
+                "any"
+                ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -a 'iTerm.app'"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "right_command pressed",
+              "value": 1
+            }
+          ]
+        },
+
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_command",
+            "modifiers": {
+              "optional": [
+                "any"
+                ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "right_command pressed",
+                "value": 1
+              }
+            },
+            {
+              "key_code": "right_command"
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_invoked": [
+              {
+                "set_variable": {
+                  "name": "right_command pressed",
+                  "value": 0
+                }
+              }
+            ],
+            "to_if_canceled": [
+              {
+                "set_variable": {
+                  "name": "right_command pressed",
+                  "value": 0
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
