@@ -1,5 +1,5 @@
 {
-  "title": "Chrome",
+  "title": "Arrows",
   "rules": [
     {
       "description": "ctrl+n as down_arrow",
@@ -20,14 +20,6 @@
           "to": [
             {
               "key_code": "down_arrow"
-            }
-          ],
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "^com.google.Chrome"
-              ]
             }
           ]
         }
@@ -53,13 +45,53 @@
             {
               "key_code": "up_arrow"
             }
-          ],
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "^com.google.Chrome"
+          ]
+        }
+      ]
+    },
+    {
+      "description": "ctrl+f as right_arrow",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ],
+              "optional": [
+                "any"
               ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_arrow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "ctrl+b as left_arrow",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "b",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ],
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_arrow"
             }
           ]
         }
