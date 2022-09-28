@@ -11,7 +11,7 @@
             "modifiers": {
               "optional": [
                 "any"
-                ]
+              ]
             }
           },
           "to": [
@@ -27,7 +27,6 @@
             }
           ]
         },
-
         {
           "type": "basic",
           "from": {
@@ -35,7 +34,7 @@
             "modifiers": {
               "optional": [
                 "any"
-                ]
+              ]
             }
           },
           "to": [
@@ -80,7 +79,7 @@
             "modifiers": {
               "optional": [
                 "any"
-                ]
+              ]
             }
           },
           "to": [
@@ -96,7 +95,6 @@
             }
           ]
         },
-
         {
           "type": "basic",
           "from": {
@@ -104,7 +102,7 @@
             "modifiers": {
               "optional": [
                 "any"
-                ]
+              ]
             }
           },
           "to": [
