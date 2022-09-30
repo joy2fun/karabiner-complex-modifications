@@ -2,7 +2,7 @@
   "title": "Arrows",
   "rules": [
     {
-      "description": "ctrl+n as down_arrow",
+      "description": "control+n as down_arrow",
       "manipulators": [
         {
           "type": "basic",
@@ -26,7 +26,7 @@
       ]
     },
     {
-      "description": "ctrl+p as up_arrow",
+      "description": "control+p as up_arrow",
       "manipulators": [
         {
           "type": "basic",
@@ -50,7 +50,7 @@
       ]
     },
     {
-      "description": "ctrl+f as right_arrow",
+      "description": "control+f as right_arrow",
       "manipulators": [
         {
           "type": "basic",
@@ -74,7 +74,7 @@
       ]
     },
     {
-      "description": "ctrl+b as left_arrow",
+      "description": "control+b as left_arrow",
       "manipulators": [
         {
           "type": "basic",

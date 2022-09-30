@@ -1,6 +1,28 @@
 {
-  "title": "control + shift + h",
+  "title": "control+h",
   "rules": [
+    {
+      "description": "control + h 删除",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "h",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ],
+              "optional": []
+            }
+          },
+          "to": [
+            {
+              "key_code": "delete"
+            }
+          ]
+        }
+      ]
+    },
     {
       "description": "control + shift + h 向前删除",
       "manipulators": [
@@ -13,8 +35,7 @@
                 "control",
                 "shift"
               ],
-              "optional": [
-              ]
+              "optional": []
             }
           },
           "to": [
