@@ -1,0 +1,74 @@
+{
+  "title": "双击 Fn",
+  "rules": [
+    {
+      "description": "双击 Fn 打开 VScode",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "fn",
+            "modifiers": {
+              "optional": [
+                "any"
+                ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -a 'Visual Studio Code.app'"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "fn pressed",
+              "value": 1
+            }
+          ]
+        },
+
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "fn",
+            "modifiers": {
+              "optional": [
+                "any"
+                ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "fn pressed",
+                "value": 1
+              }
+            },
+            {
+              "key_code": "fn"
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_invoked": [
+              {
+                "set_variable": {
+                  "name": "fn pressed",
+                  "value": 0
+                }
+              }
+            ],
+            "to_if_canceled": [
+              {
+                "set_variable": {
+                  "name": "fn pressed",
+                  "value": 0
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
