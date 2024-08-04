@@ -1,13 +1,13 @@
 {
-  "title": "双击 Command",
+  "title": "chrome",
   "rules": [
     {
-      "description": "双击右侧 Command 打开 iTerm",
+      "description": "双击右侧 Option 打开 Chrome",
       "manipulators": [
         {
           "type": "basic",
           "from": {
-            "key_code": "right_command",
+            "key_code": "right_option",
             "modifiers": {
               "optional": [
                 "any"
@@ -16,13 +16,13 @@
           },
           "to": [
             {
-              "shell_command": "open -a 'iTerm.app'"
+              "shell_command": "open -a 'Google Chrome.app'"
             }
           ],
           "conditions": [
             {
               "type": "variable_if",
-              "name": "right_command pressed",
+              "name": "right_option pressed",
               "value": 1
             }
           ]
@@ -30,7 +30,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "right_command",
+            "key_code": "right_option",
             "modifiers": {
               "optional": [
                 "any"
@@ -40,19 +40,19 @@
           "to": [
             {
               "set_variable": {
-                "name": "right_command pressed",
+                "name": "right_option pressed",
                 "value": 1
               }
             },
             {
-              "key_code": "right_command"
+              "key_code": "right_option"
             }
           ],
           "to_delayed_action": {
             "to_if_invoked": [
               {
                 "set_variable": {
-                  "name": "right_command pressed",
+                  "name": "right_option pressed",
                   "value": 0
                 }
               }
@@ -60,7 +60,7 @@
             "to_if_canceled": [
               {
                 "set_variable": {
-                  "name": "right_command pressed",
+                  "name": "right_option pressed",
                   "value": 0
                 }
               }
@@ -70,58 +70,57 @@
       ]
     },
     {
-      "description": "双击左侧 Command 打开 打开 VScode",
+      "description": "双击左侧 Option 打开 Safari",
       "manipulators": [
         {
           "type": "basic",
           "from": {
-            "key_code": "left_command",
+            "key_code": "left_option",
             "modifiers": {
               "optional": [
                 "any"
-                ]
+              ]
             }
           },
           "to": [
             {
-              "shell_command": "open -a 'Visual Studio Code.app'"
+              "shell_command": "open -a 'Safari.app'"
             }
           ],
           "conditions": [
             {
               "type": "variable_if",
-              "name": "left_command pressed",
+              "name": "left_option pressed",
               "value": 1
             }
           ]
         },
-
         {
           "type": "basic",
           "from": {
-            "key_code": "left_command",
+            "key_code": "left_option",
             "modifiers": {
               "optional": [
                 "any"
-                ]
+              ]
             }
           },
           "to": [
             {
               "set_variable": {
-                "name": "left_command pressed",
+                "name": "left_option pressed",
                 "value": 1
               }
             },
             {
-              "key_code": "left_command"
+              "key_code": "left_option"
             }
           ],
           "to_delayed_action": {
             "to_if_invoked": [
               {
                 "set_variable": {
-                  "name": "left_command pressed",
+                  "name": "left_option pressed",
                   "value": 0
                 }
               }
@@ -129,7 +128,7 @@
             "to_if_canceled": [
               {
                 "set_variable": {
-                  "name": "left_command pressed",
+                  "name": "left_option pressed",
                   "value": 0
                 }
               }
