@@ -70,71 +70,21 @@
       ]
     },
     {
-      "description": "双击左侧 Command 打开 打开 VScode",
+      "description": "right_command + left_command 打开 VScode",
       "manipulators": [
         {
           "type": "basic",
           "from": {
             "key_code": "left_command",
             "modifiers": {
-              "optional": [
-                "any"
-                ]
+              "mandatory": ["right_command"]
             }
           },
           "to": [
             {
               "shell_command": "open -a 'Visual Studio Code.app'"
             }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "left_command pressed",
-              "value": 1
-            }
           ]
-        },
-
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "left_command",
-            "modifiers": {
-              "optional": [
-                "any"
-                ]
-            }
-          },
-          "to": [
-            {
-              "set_variable": {
-                "name": "left_command pressed",
-                "value": 1
-              }
-            },
-            {
-              "key_code": "left_command"
-            }
-          ],
-          "to_delayed_action": {
-            "to_if_invoked": [
-              {
-                "set_variable": {
-                  "name": "left_command pressed",
-                  "value": 0
-                }
-              }
-            ],
-            "to_if_canceled": [
-              {
-                "set_variable": {
-                  "name": "left_command pressed",
-                  "value": 0
-                }
-              }
-            ]
-          }
         }
       ]
     }

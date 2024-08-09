@@ -1,8 +1,34 @@
 {
-  "title": "双击 Fn",
+  "title": "escape",
   "rules": [
     {
-      "description": "双击 Fn 打开 spotlight(cmd+shift+space)",
+      "description": "escape 长按锁屏",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "escape",
+            "modifiers": {}
+          },
+          "parameters": {
+            "basic.to_if_alone_timeout_milliseconds": 250
+          },
+          "to_if_alone": [
+            {
+              "key_code": "escape"
+            }
+          ],
+          "to_if_held_down": [
+            {
+              "key_code": "q",
+              "modifiers": ["command", "control"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "双击 escape 打开 VScode",
       "manipulators": [
         {
           "type": "basic",
@@ -16,8 +42,7 @@
           },
           "to": [
             {
-              "key_code": "spacebar",
-              "modifiers": ["command", "shift"]
+              "shell_command": "open -a 'Visual Studio Code.app'"
             }
           ],
           "conditions": [
